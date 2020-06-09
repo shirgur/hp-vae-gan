@@ -7,11 +7,15 @@ Real Videos
 
 <img src='visuals/lion_king_1_real.gif' align="right" width=384>
 
+<br><br><br>
+
 Fake Videos
 
 <img src='visuals/wingsuit_fake.gif' align="right" width=384>
 
 <img src='visuals/lion_king_1_fake.gif' align="right" width=384>
+
+<br><br><br>
 
  ## Environment setting
 Use commands in ```env.sh``` to setup the correct conda environment
