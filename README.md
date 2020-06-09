@@ -1,7 +1,7 @@
 # Hierarchical Patch VAE-GA
 Official repository of the paper "Hierarchical Patch VAE-GAN: Generating Diverse Videos from a Single Sample"([link](https://))
 
-<img src='visuals/wingsuit_fake.gif' align="right" width=384>
+<img src='visuals/wingsuit_fake.gif' align="right" width='100%'>
 
  ## Environment setting
 Use commands in ```env.sh``` to setup the correct conda environment
