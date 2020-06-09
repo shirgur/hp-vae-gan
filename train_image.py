@@ -307,7 +307,7 @@ if __name__ == '__main__':
     parser.add_argument('--hflip', action='store_true', default=False, help='horizontal flip')
     parser.add_argument('--img-size', type=int, default=256)
     parser.add_argument('--stop-scale-time', type=int, default=-1)
-    parser.add_argument('--data-rep', type=int, default=1, help='data repetition')
+    parser.add_argument('--data-rep', type=int, default=1000, help='data repetition')
 
     # main arguments
     parser.add_argument('--checkname', type=str, default='DEBUG', help='check name')
@@ -322,6 +322,9 @@ if __name__ == '__main__':
 
     assert opt.vae_levels > 0
     assert opt.disc_loss_weight > 0
+
+    if opt.data_rep < opt.batch_size:
+        opt.data_rep = opt.batch_size
 
     # Define Saver
     opt.saver = utils.ImageSaver(opt)
