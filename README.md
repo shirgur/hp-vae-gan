@@ -22,6 +22,7 @@ Use commands in ```env.sh``` to setup the correct conda environment
 
 ## Training Video
 For training a single video, use the following command for example:
+
 ```CUDA_VISIBLE_DEVICES=0 python train_video.py --video-path data/vids/air_balloons.mp4 --vae-levels 3 --checkname myvideotest --visualize```
 
 Common training options:
@@ -49,8 +50,10 @@ Common training options:
 
 ## Training Image
 For training a single video, use the following command for example:
+
 ```CUDA_VISIBLE_DEVICES=0 python train_image.py --image-path data/imgs/air_balloons.jpg --vae-levels 3 --checkname myimagetest --visualize```
 
 ## Training baselines for video
 For training a single video using SinGan re-implementation, use the following command:
+
 ```CUDA_VISIBLE_DEVICES=0 python train_video_baselines.py --video-path data/vids/air_balloons.mp4 --checkname myimagetest --visualize --generator GeneratorSG --train-depth 1```
