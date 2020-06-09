@@ -7,13 +7,13 @@ Real Videos
 
 <img src='visuals/lion_king_1_real.gif' align="left" width=256>
 
-<br><br><br>
+<br><br><br><br><br><br>
 
 Fake Videos
 
-<img src='visuals/wingsuit_fake.gif' align="right" width='100%'>
+<img src='visuals/wingsuit_fake.gif' align="left" width='100%'>
 
-<img src='visuals/lion_king_1_fake.gif' align="right" width='100%'>
+<img src='visuals/lion_king_1_fake.gif' align="left" width='100%'>
 
 <br><br><br>
 
