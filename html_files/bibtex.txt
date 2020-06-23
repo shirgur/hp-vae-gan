@@ -1,0 +1,6 @@
+@misc{hp-vae-gan,
+Author = {Shir Gur and Sagie Benaim and Lior Wolf},
+Title = {Hierarchical Patch VAE-GAN: Generating Diverse Videos from a Single Sample},
+Year = {2020},
+Eprint = {arXiv:2006.12226},
+}
