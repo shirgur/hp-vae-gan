@@ -11,8 +11,6 @@ Fake Videos
 
 <img src='visuals/wingsuit_fake.gif' align="left" width='100%'>
 
-<img src='visuals/lion_king_1_fake.gif' align="left" width='100%'>
-
 <br><br><br><br><br><br>
 
  ## Environment setting
