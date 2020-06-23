@@ -1,0 +1,43 @@
+body {
+	font: 14px "Google Sans";
+	color: #000;
+	background-color: #fff;
+	line-height: 1.5em;
+}
+
+head {
+	padding-top: 10em;
+}
+
+.container {
+	width: 1000px;
+	min-height: 1000px;
+	margin: 0 auto; /* top and bottom, right and left */
+	text-align: left; /* top, right, bottom, left */
+	padding-top: 0em;
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-bottom: 1em;
+}
+a:link {
+	color: #4488ff;
+	text-decoration: underline;
+}
+a:active {
+	color: #4488ff;
+	text-decoration: underline;
+}
+a:visited {
+	color: #4488ff;
+	text-decoration: underline;
+}
+a:hover {
+	color: #ff0000;
+	text-decoration: none;
+}
+.reference {
+	font-size: 80%;
+}
+h3 {
+  display: inline;
+}
