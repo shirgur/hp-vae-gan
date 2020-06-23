@@ -6,10 +6,10 @@ Shir Gur<sup>\*</sup>, Sagi Benaim<sup>\*</sup>, Lior Wolf
 
 Real Videos
 
-<img src='visuals/wingsuit_real.gif' align="left" width=256>
+<img src='./html_files/random/wingsuit_real.gif' align="left" width=256>
 
 <br><br><br><br><br><br>
 
 Fake Videos
 
-<img src='visuals/wingsuit_fake.gif' align="left" width='100%'>
+<img src='./html_files/random/wingsuit_fake.gif' align="left" width='100%'>
