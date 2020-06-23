@@ -1,5 +1,5 @@
-# Hierarchical Patch VAE-GA
-Official repository of the paper "Hierarchical Patch VAE-GAN: Generating Diverse Videos from a Single Sample"([link](https://))
+# Hierarchical Patch VAE-GAN
+Official repository of the paper "Hierarchical Patch VAE-GAN: Generating Diverse Videos from a Single Sample"([link](https://arxiv.org/abs/2006.12226))
 
 Real Videos
 
