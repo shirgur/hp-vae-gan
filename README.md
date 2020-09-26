@@ -1,5 +1,5 @@
 # Hierarchical Patch VAE-GAN
-Official repository of the paper "Hierarchical Patch VAE-GAN: Generating Diverse Videos from a Single Sample"
+Official repository of the paper "Hierarchical Patch VAE-GAN: Generating Diverse Videos from a Single Sample" (NeurIPS 2020)
 
 **[Project](https://shirgur.github.io/hp-vae-gan/) | [arXiv](https://arxiv.org/abs/2006.12226) | [Code](https://github.com/shirgur/hp-vae-gan)**
 
