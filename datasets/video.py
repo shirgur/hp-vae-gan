@@ -57,7 +57,7 @@ class SingleVideoDataset(Dataset):
         if self.opt.scale_idx > 0:
             every_zero_scale = self.opt.sampling_rates[0]
             frames_zero_scale = self.zero_scale_frames[idx:idx + self.opt.fps_lcm + 1:every_zero_scale]
-            frames_zero_scale = K.image_to_tensor(frames_zero_scale)
+            frames_zero_scale = K.image_to_tensor(frames_zero_scale).float()
             frames_zero_scale = frames_zero_scale / 255
             frames_zero_scale_transformed = self._get_transformed_frames(frames_zero_scale, hflip)
 

@@ -46,7 +46,7 @@ class SingleImageDataset(Dataset):
         # Extract o-level index
         if self.opt.scale_idx > 0:
             images_zero_scale = self.generate_image(0)
-            images_zero_scale = K.image_to_tensor(images_zero_scale)
+            images_zero_scale = K.image_to_tensor(images_zero_scale).float()
             images_zero_scale = images_zero_scale / 255
             images_zero_scale_transformed = self._get_transformed_images(images_zero_scale, hflip)
 
