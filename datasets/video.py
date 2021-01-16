@@ -49,7 +49,7 @@ class SingleVideoDataset(Dataset):
 
         every = self.opt.sampling_rates[self.opt.fps_index]
         frames = self.frames[idx:idx + self.opt.fps_lcm + 1:every]
-        frames = K.image_to_tensor(frames)
+        frames = K.image_to_tensor(frames).float()
         frames = frames / 255  # Set range [0, 1]
         frames_transformed = self._get_transformed_frames(frames, hflip)
 

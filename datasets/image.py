@@ -39,7 +39,7 @@ class SingleImageDataset(Dataset):
         hflip = random.random() < 0.5 if self.opt.hflip else False
 
         images = self.generate_image(self.opt.scale_idx)
-        images = K.image_to_tensor(images)
+        images = K.image_to_tensor(images).float()
         images = images / 255  # Set range [0, 1]
         images_transformed = self._get_transformed_images(images, hflip)
 

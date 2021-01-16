@@ -69,20 +69,6 @@ def train(opt, netG):
                  "lr": opt.lr_g * (opt.lr_scale ** (len(netG.body[-opt.train_depth:]) - 1 - idx))}
                 for idx, block in enumerate(netG.body[-opt.train_depth:])]
 
-    # if opt.vae_levels < opt.scale_idx + 1:
-    #     train_depth = min(opt.train_depth, len(netG.body) - opt.vae_levels + 1)
-    #     parameter_list += [
-    #         {"params": block.parameters(), "lr": opt.lr_g * (opt.lr_scale ** (len(netG.body[-train_depth:]) - 1 - idx))}
-    #         for idx, block in enumerate(netG.body[-train_depth:])]
-    # else:
-    #     # VAE
-    #     parameter_list += [{"params": netG.encode.parameters(), "lr": opt.lr_g * (opt.lr_scale ** opt.scale_idx)},
-    #                        {"params": netG.decoder.parameters(), "lr": opt.lr_g * (opt.lr_scale ** opt.scale_idx)}]
-    #     parameter_list += [
-    #         {"params": block.parameters(),
-    #          "lr": opt.lr_g * (opt.lr_scale ** (len(netG.body[-opt.train_depth:]) - 1 - idx))}
-    #         for idx, block in enumerate(netG.body[-opt.train_depth:])]
-
     optimizerG = optim.Adam(parameter_list, lr=opt.lr_g, betas=(opt.beta1, 0.999))
 
     # Parallel
@@ -288,7 +274,7 @@ if __name__ == '__main__':
     parser.add_argument('--max-size', type=int, default=256, help='image minimal size at the coarser scale')
 
     # optimization hyper parameters:
-    parser.add_argument('--niter', type=int, default=50000, help='number of iterations to train per scale')
+    parser.add_argument('--niter', type=int, default=5000, help='number of iterations to train per scale')
     parser.add_argument('--lr-g', type=float, default=0.0005, help='learning rate, default=0.0005')
     parser.add_argument('--lr-d', type=float, default=0.0005, help='learning rate, default=0.0005')
     parser.add_argument('--beta1', type=float, default=0.5, help='beta1 for adam. default=0.5')

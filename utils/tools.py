@@ -130,13 +130,12 @@ class TqdmToLogger(tqdm.tqdm):
     @staticmethod
     def format_meter(n, total, elapsed, ncols=None, prefix='', ascii=False,
                      unit='it', unit_scale=False, rate=None, bar_format=None,
-                     postfix=None, unit_divisor=1000, nrows=None):
+                     postfix=None, unit_divisor=1000, **extra_kwargs):
 
         meter = tqdm.tqdm.format_meter(
             n=n, total=total, elapsed=elapsed, ncols=ncols, prefix=prefix, ascii=ascii,
             unit=unit, unit_scale=unit_scale, rate=rate, bar_format=bar_format,
-            # postfix=postfix, unit_divisor=unit_divisor, nrows=nrows)
-            postfix=postfix, unit_divisor=unit_divisor)
+            postfix=postfix, unit_divisor=unit_divisor, **extra_kwargs)
 
         # get rid of that stupid comma before the postfix
         if postfix is not None:
