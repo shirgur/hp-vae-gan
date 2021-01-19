@@ -1,5 +1,4 @@
-conda create --name torch1.4 python=3.6 numpy Cython scipy h5py matplotlib tqdm ipython scikit-learn tensorboard ipython imageio scikit-image future colorama
-conda activate torch1.4
-conda install pytorch==1.4.0 torchvision==0.2.2 cudatoolkit=10.1 -c pytorch
-conda install -c menpo opencv
-pip install kornia==0.2.0 moviepy pypng
+conda create --name hpvaegan python=3.6 numpy Cython scipy h5py matplotlib tqdm ipython scikit-learn tensorboard ipython imageio scikit-image future colorama
+conda activate hpvaegan
+conda install pytorch==1.6.0 torchvision==0.7.0 -c pytorch
+pip install kornia==0.4.0 moviepy pypng opencv-python

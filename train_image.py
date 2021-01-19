@@ -361,6 +361,11 @@ if __name__ == '__main__':
     opt.dataset = dataset
     opt.data_loader = data_loader
 
+    with open(os.path.join(opt.saver.experiment_dir, 'args.txt'), 'w') as args_file:
+        for argument, value in sorted(vars(opt).items()):
+            if type(value) in (str, int, float, tuple, list, bool):
+                args_file.write('{}: {}\n'.format(argument, value))
+
     with logger.LoggingBlock("Commandline Arguments", emph=True):
         for argument, value in sorted(vars(opt).items()):
             if type(value) in (str, int, float, tuple, list):

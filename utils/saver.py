@@ -22,13 +22,17 @@ def write_video(array, filename, opt):
 class VideoSaver(object):
     def __init__(self, opt, run_id=None):
         self.opt = opt
-        clip_name = '.'.join(opt.video_path.split('/')[-1].split('.')[:-1])
-        self.directory = os.path.join('run', clip_name, opt.checkname)
-        if run_id is None:
-            self.runs = sorted(glob.glob(os.path.join(self.directory, 'experiment_*')))
-            run_id = int(self.runs[-1].split('_')[-1]) + 1 if self.runs else 0
+        if not hasattr(opt, 'experiment_dir') or not os.path.exists(opt.experiment_dir):
+            clip_name = '.'.join(opt.video_path.split('/')[-1].split('.')[:-1])
+            self.directory = os.path.join('run', clip_name, opt.checkname)
+            if run_id is None:
+                self.runs = sorted(glob.glob(os.path.join(self.directory, 'experiment_*')))
+                run_id = int(self.runs[-1].split('_')[-1]) + 1 if self.runs else 0
 
-        self.experiment_dir = os.path.join(self.directory, 'experiment_{}'.format(str(run_id)))
+            self.experiment_dir = os.path.join(self.directory, 'experiment_{}'.format(str(run_id)))
+        else:
+            self.experiment_dir = opt.experiment_dir
+
         if not os.path.exists(self.experiment_dir):
             os.makedirs(self.experiment_dir)
 
@@ -52,13 +56,17 @@ class VideoSaver(object):
 class ImageSaver(object):
     def __init__(self, opt, run_id=None):
         self.opt = opt
-        clip_name = '.'.join(opt.image_path.split('/')[-1].split('.')[:-1])
-        self.directory = os.path.join('run', clip_name, opt.checkname)
-        if run_id is None:
-            self.runs = sorted(glob.glob(os.path.join(self.directory, 'experiment_*')))
-            run_id = int(self.runs[-1].split('_')[-1]) + 1 if self.runs else 0
+        if not hasattr(opt, 'experiment_dir') or not os.path.exists(opt.experiment_dir):
+            clip_name = '.'.join(opt.image_path.split('/')[-1].split('.')[:-1])
+            self.directory = os.path.join('run', clip_name, opt.checkname)
+            if run_id is None:
+                self.runs = sorted(glob.glob(os.path.join(self.directory, 'experiment_*')))
+                run_id = int(self.runs[-1].split('_')[-1]) + 1 if self.runs else 0
 
-        self.experiment_dir = os.path.join(self.directory, 'experiment_{}'.format(str(run_id)))
+            self.experiment_dir = os.path.join(self.directory, 'experiment_{}'.format(str(run_id)))
+        else:
+            self.experiment_dir = opt.experiment_dir
+
         if not os.path.exists(self.experiment_dir):
             os.makedirs(self.experiment_dir)
 

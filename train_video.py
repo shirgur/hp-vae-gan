@@ -303,17 +303,17 @@ if __name__ == '__main__':
     # Dataset
     parser.add_argument('--video-path', required=True, help='video path')
     parser.add_argument('--start-frame', default=0, type=int, help='start frame number')
-    parser.add_argument('--max-frames', default=1000, type=int, help='# frames to save')
+    parser.add_argument('--max-frames', default=13, type=int, help='# frames to save')
     parser.add_argument('--hflip', action='store_true', default=False, help='horizontal flip')
     parser.add_argument('--img-size', type=int, default=256)
     parser.add_argument('--sampling-rates', type=int, nargs='+', default=[4, 3, 2, 1], help='sampling rates')
     parser.add_argument('--stop-scale-time', type=int, default=-1)
-    parser.add_argument('--data-rep', type=int, default=1, help='data repetition')
+    parser.add_argument('--data-rep', type=int, default=1000, help='data repetition')
 
     # main arguments
     parser.add_argument('--checkname', type=str, default='DEBUG', help='check name')
     parser.add_argument('--mode', default='train', help='task to be done')
-    parser.add_argument('--batch-size', type=int, default=2, help='batch size')
+    parser.add_argument('--batch-size', type=int, default=1, help='batch size')
     parser.add_argument('--print-interval', type=int, default=100, help='print interva')
     parser.add_argument('--visualize', action='store_true', default=False, help='visualize using tensorboard')
     parser.add_argument('--no-cuda', action='store_true', default=False, help='disables cuda')
@@ -372,6 +372,11 @@ if __name__ == '__main__':
 
     opt.dataset = dataset
     opt.data_loader = data_loader
+
+    with open(os.path.join(opt.saver.experiment_dir, 'args.txt'), 'w') as args_file:
+        for argument, value in sorted(vars(opt).items()):
+            if type(value) in (str, int, float, tuple, list, bool):
+                args_file.write('{}: {}\n'.format(argument, value))
 
     with logger.LoggingBlock("Commandline Arguments", emph=True):
         for argument, value in sorted(vars(opt).items()):
