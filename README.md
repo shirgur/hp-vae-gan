@@ -74,3 +74,15 @@ In order to extract gifs and images, use the ```extract_*.py``` files similarly:
 python eval_video.py --max-samples 4 --exp-dir run/**/*/experiment_0/eval
 ```
 results are saved under ```run/**/*/experiment_0/eval/gifs(images)```.
+
+## Citation
+If you found this work useful, please cite.
+
+```
+@article{gur2020hierarchical,
+  title={Hierarchical Patch VAE-GAN: Generating Diverse Videos from a Single Sample},
+  author={Gur, Shir and Benaim, Sagie and Wolf, Lior},
+  journal={arXiv preprint arXiv:2006.12226},
+  year={2020}
+}
+```
